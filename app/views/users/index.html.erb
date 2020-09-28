@@ -1,9 +1,0 @@
-<h1>登録済みの全ユーザー</h1>
-
-<%= will_paginate @users %>
-
-<ul class="users">
-  <%= render @users, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
-</ul>
-
-<%= will_paginate %>

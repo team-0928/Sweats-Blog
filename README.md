@@ -5,6 +5,7 @@ application up and running.
 
 READMEのアップデート！！！！！！！！！！！！！！！！！
 やったぜ！！！
+heroku
 
 Things you may want to cover:
 

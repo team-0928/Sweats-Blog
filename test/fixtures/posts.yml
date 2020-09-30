@@ -1,19 +1,59 @@
-# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+orange:
+  name: "pancake"
+  content: "I just ate an orange!"
+  created_at: <%= 10.minutes.ago %>
+  user: michael
+  image: "example1.jpg"
 
-one:
-  name: MyString
-  price:
-  store: MyString
-  address: MyString
-  image: MyString
-  comment: MyText
-  user_id:
+tau_manifesto:
+  name: "cake"
+  content: "Check out the @tauday site by @mhartl: https://tauday.com"
+  created_at: <%= 3.years.ago %>
+  user: michael
+  image: "example2.jpg"
 
-two:
-  name: MyString
-  price:
-  store: MyString
-  address: MyString
-  image: MyString
-  comment: MyText
-  user_id:
+cat_video:
+  name: "iced cream"
+  content: "Sad cats are sad: https://youtu.be/PKffm2uI4dk"
+  created_at: <%= 2.hours.ago %>
+  user: michael
+  image: "example3.jpg"
+
+most_recent:
+  name: "chocorate"
+  content: "Writing a short test"
+  created_at: <%= Time.zone.now %>
+  user: michael
+  image: "example4.jpg"
+
+<% 30.times do |n| %>
+post_<%= n %>:
+  name: <%= "pancake#{n}" %>
+  content: <%= Faker::Lorem.sentence(word_count: 5) %>
+  created_at: <%= 42.days.ago %>
+  user: michael
+<% end %>
+
+ants:
+  name: "ants_post"
+  content: "Oh, is that what you want? Because that's how you get ants!"
+  created_at: <%= 2.years.ago %>
+  user: archer
+
+zone:
+  name: "zone_post"
+  content: "Danger zone!"
+  created_at: <%= 3.days.ago %>
+  user: archer
+
+tone:
+  name: "tone_post"
+  content: "I'm sorry. Your words made sense, but your sarcastic tone did not."
+  created_at: <%= 10.minutes.ago %>
+  user: lana
+
+van:
+  name: "van_post"
+  content: "Dude, this van's, like, rolling probable cause."
+  created_at: <%= 4.hours.ago %>
+  user: lana

@@ -9,22 +9,14 @@
     </div>
 
     <ul class="user-tabs">
-      <li class="active"><%= link_to "投稿", @user %></li>
+      <li class="active"><%= link_to "投稿(#{@user.posts.count})", @user %></li>
       <li><%= link_to "いいね!", "/users/#{@user.id}/likes" %></li>
     </ul>
 
     <%= will_paginate @posts %>
 
     <div class="row">
-    <% @posts.each do |post| %>
-      <aside class="col-md-4">
-        <section class="post_part">
-        <%= link_to image_tag(post.image.url, size: '300x300', alt: "Sweet Image"), post %><br>
-        <%= link_to post.name, post %><br>
-        <%= link_to "投稿者：#{post.user.name}", user_path(post.user) %>
-        </section>
-      </aside>
-    <% end %>
+      <%= render @posts, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
     </div>
 
     <%= will_paginate @posts %>

@@ -1,5 +1,5 @@
 <%= form_with(model: @post, local: true) do |f| %>
-  <%= render 'shared/post/error_messages', object: @post %>
+  <%= render 'shared/error_messages', object: f.object %>
 
   <%= f.label :image, "アップロード画像" %>
   <%= f.file_field :image, accept: 'image/jpg image/jpeg image/gif image/png' %>
@@ -16,8 +16,8 @@
   <%= f.label :address, "お店の住所（任意）" %>
   <%= f.text_field :address, class: 'form-control' %>
 
-  <%= f.label :comment, "コメント（任意）" %>
-  <%= f.text_area :comment, class: 'form-control' %>
+  <%= f.label :content, "コメント" %>
+  <%= f.text_area :content, placeholder: "感想を書いてみよう", class: 'form-control' %>
 
   <%= f.submit yield(:button_text), class: "btn btn-primary" %>
 <% end %>

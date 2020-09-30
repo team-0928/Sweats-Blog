@@ -1,6 +1,8 @@
 
 <section class="post_info">
-  <%= image_tag @post.image.url, size: '300x300', class: 'post_image', alt: "Sweet Image" %>
+  <% if @post.image.url %>
+    <%= image_tag @post.image.url, size: '300x300', class: 'post_image', alt: "Sweet Image" %>
+  <% end %>
   <p><%= "商品名：#{@post.name}" %></p>
   <p><%= "値段：#{@post.price}円" %></p>
   <p><%= "店名：#{@post.store}" %></p>
@@ -9,8 +11,11 @@
   <div class="post_user">
     <%= link_to image_tag(@post.user.avatar.url, size: '80x80', alt: "User Image"), @post.user %>
     <%= link_to "投稿者：#{@post.user.name}", @post.user %>
+    <span class="timestamp">
+    Posted <%= time_ago_in_words(@post.created_at) %> ago.
+  </span>
   </div>
-  <p><%= "コメント：#{@post.comment}" %></p>
+  <p><%= "コメント：#{@post.content}" %></p>
   <%# <>いいね件数： <%= @post.likes.count %>
   <% if current_user && current_user.already_liked?(@post) %>
     <%# <%= button_to 'いいねを取り消す', post_like_path(@post), method: :delete %>
@@ -27,8 +32,10 @@
   <% @post.liked_users.each do |user| %>
     <li><%= user.name %></li>
   <% end %>
-  <% if current_user && @post.user.id == current_user.id %>
+  <% if current_user?(@post.user) %>
     <%= link_to "変更", edit_post_path, class: "btn btn-primary", role: "button" %>
-    <%= link_to "削除", post_path, method: :delete, class: "btn btn-primary", role: "button" %>
+    <%= link_to "削除", @post, method: :delete,
+            class: "btn btn-primary", role: "button",
+            data: { confirm: "この投稿を削除しますか？" } %>
   <% end %>
 </section>

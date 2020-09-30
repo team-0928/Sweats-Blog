@@ -6,10 +6,11 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.string :store
       t.string :address
       t.string :image
-      t.text :comment
-      t.integer :user_id
+      t.text :content
+      t.references :user, foreign_key: true
 
       t.timestamps
     end
+    add_index :posts, [:user_id, :created_at]
   end
 end

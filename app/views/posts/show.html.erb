@@ -1,6 +1,6 @@
 
 <section class="post_info" %>
-  <%= image_tag @post.image, size: '300x300', class: 'post_image', alt: "Sweet Image" if @post.image.attached? %>
+  <%= image_tag @post.image, class: 'post_image', alt: "Sweet Image" if @post.image.attached? %>
   <p><%= "商品名：#{@post.name}" %></p>
   <p><%= "値段：#{@post.price}円" %></p>
   <p><%= "店名：#{@post.store}" %></p>

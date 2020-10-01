@@ -20,10 +20,9 @@ class PostsController < ApplicationController
     @post.image.attach(params[:post][:image])
     if @post.save
       flash[:success] = "投稿しました！"
-      redirect_to root_url
+      redirect_to @post
     else
-      @feed_items = current_user.feed.paginate(page: params[:page])
-      render 'static_pages/index'
+      render 'new'
     end
   end
 

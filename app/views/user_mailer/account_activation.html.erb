@@ -1,10 +1,10 @@
 <h1>Sweets Blog</h1>
 
-<p>Hi <%= @user.name %>,</p>
+<p><%= @user.name %>様,</p>
 
 <p>
-Welcome to the Sweets Blog! Click on the link below to activate your account:
+Sweets Blog へようこそ! 以下のリンクを押してアカウントを有効化してください：
 </p>
 
-<%= link_to "Activate", edit_account_activation_url(@user.activation_token,
+<%= link_to "アカウントの有効化を実行する", edit_account_activation_url(@user.activation_token,
                                                     email: @user.email) %>

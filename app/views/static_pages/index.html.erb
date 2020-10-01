@@ -1,5 +1,5 @@
-<% if logged_in? %>
-  <%= render 'static_pages/new_post'%>
-<% else %>
-  <%= render 'static_pages/welcome'%>
-<% end %>
+<div class="jumbotron jumbotron_width outer">
+  <h1 class="display-4">SweetsBlogをはじめよう</h1>
+  <p class="lead">みんなでお気に入りのスイーツを投稿、共有しよう！</p>
+  <%= link_to "SweetsBlogをはじめよう！", signup_path, class: "btn btn-primary btn-lg", role: "button" %>
+</div>

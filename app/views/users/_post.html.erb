@@ -1,7 +1,7 @@
 <aside class="col-md-4">
   <section class="post_part">
   <% if post.image.url %>
-    <%= link_to image_tag(post.image.url, size: '300x300', alt: "Sweet Image"), post %><br>
+    <%= link_to image_tag(post.image, size: '300x300', alt: "Sweet Image"), post if post.image.attached? %><br>
   <% end %>
   <%= link_to post.name, post %><br>
   (<%= post.liked_users.count %>) <%# 投稿へのいいね数を表示 %>

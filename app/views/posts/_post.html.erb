@@ -1,6 +1,6 @@
 <aside class="col-md-4">
   <section class="post_part">
-  <%= link_to image_tag(post.display_image, size: '100x100'), post if post.image.attached? %><br>
+  <%= link_to image_tag(post.image, size: '300x300'), post if post.image.attached? %><br>
   <%= link_to post.name, post %><br>
   (<%= post.liked_users.count %>) <%# 投稿へのいいね数を表示 %>
   <%= link_to "投稿者：#{post.user.name}", user_path(post.user) %>

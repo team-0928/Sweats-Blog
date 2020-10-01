@@ -8,18 +8,18 @@ class Post < ApplicationRecord
   default_scope -> { order(created_at: :desc) }
 
   validates :name, presence: true, length: { maximum: 50 }
-  # validates :image, presence: true
+  validates :image, presence: true
   validates :content, presence: true, length: { maximum: 300 }
   validates :image,
     content_type: { in: %w[image/jpeg image/gif image/png],
-      message: "must be a valid image format" },
+      message: "有効なファイルを選択してください" },
     size:         { less_than: 5.megabytes,
-      message: "should be less than 5MB" }
+      message: "データサイズは5MB以下のものにしてください" }
   validates :user_id, presence: true
 
   # 表示用のリサイズ済み画像を返す
   def display_image
-    image.variant(resize_to_limit: [500, 500])
+    image.variant(resize_to_limit: [300, 300])
   end
 
   # def user

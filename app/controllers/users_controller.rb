@@ -18,6 +18,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.avatar.attach(params[:user][:avatar])
     if @user.save
       @user.send_activation_email
       flash[:info] = "登録は完了しておりません。メールの内容を確認してください"
@@ -34,6 +35,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     if @user.update(user_params)
+      @user.avatar.attach(params[:user][:avatar])
       flash[:seccess] = "プロフィールを更新しました"
       redirect_to @user
     else

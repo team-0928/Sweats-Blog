@@ -1,6 +1,8 @@
 class User < ApplicationRecord
-  mount_uploader :avatar, AvatarUploader
+  # mount_uploader :avatar, AvatarUploader
+  before_create :default_image
 
+  has_one_attached :avatar
   has_many :posts, dependent: :destroy
   has_many :likes, dependent: :destroy
   has_many :liked_posts, through: :likes, source: :post
@@ -82,6 +84,12 @@ class User < ApplicationRecord
   # 完全な実装は次章の「ユーザーをフォローする」を参照
   def feed
     Post.where("user_id = ?", id)
+  end
+
+  def default_image
+    if !self.avatar.attached?
+      self.avatar.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'avatar-default.png')), filename: 'default-image.png', content_type: 'image/png')
+    end
   end
 
   private

@@ -1,24 +1,40 @@
-# README
+# Sweets Blog
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Sweets Blogは利用者同士でスイーツの情報を共有することができるサービスです。スイーツの名前や、イメージ、店の住所などを入力して投稿しましょう。誰かがいいね！を付けてくれるかもしれません！今後もサービスの向上を目指してくのでお楽しみに！
 
-Things you may want to cover:
+## アプリのURL
+https://sweets-blog.herokuapp.com/
 
-* Ruby version
+## アプリの動作環境
+- Ruby on Rails(フレームワーク)
+- heroku（サーバ）
+- AWS/S3(データベース)
 
-* System dependencies
+近日中に環境をAWSに移行する予定です。移行が完了次第、github上でお知らせいたします。
 
-* Configuration
+## 使い方
 
-* Database creation
+このアプリケーションを動かす場合は、まずはリポジトリを手元にクローンしてください。
+その後、次のコマンドで必要になる RubyGems をインストールします。
 
-* Database initialization
+```
+$ bundle install --without production
+```
 
-* How to run the test suite
+その後、データベースへのマイグレーションを実行します。
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+$ rails db:migrate
+```
 
-* Deployment instructions
+最後に、テストを実行してうまく動いているかどうか確認してください。
+このサービスは現在も開発中であるため、状況によってはテストが全てパスしないことがあることをご了承ください。
+```
+$ rails test
+```
 
-* ...
+テストが無事に通ったら、Railsサーバーを立ち上げる準備が整っているはずです。
+
+```
+$ rails server
+```

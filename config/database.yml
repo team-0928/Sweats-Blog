@@ -32,5 +32,5 @@ test:
 production:
   <<: *default
   database: sweets_blog_production
-  user: sweets_blog
+  username: root
   password: <%= ENV['Sweets_Blog_DATABASE_PASSWORD'] %>

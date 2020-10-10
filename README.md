@@ -10,9 +10,12 @@ https://sweets-blog.herokuapp.com/
 ## アプリの動作環境
 - Ruby on Rails(フレームワーク)
 - heroku（サーバ）
-- AWS/S3(データベース)
+- AWS/S3(ストレージ)
+- PostgreSQL(データベース）
+- SendGrid(メール送信)
 
-近日中に環境をAWSに移行する予定です。移行が完了次第、github上でお知らせいたします。
+動作環境をAWSに移行中です。現在はherokuにて動作中です。
+移行が完了次第、github上でお知らせいたします。
 
 ## 使い方
 

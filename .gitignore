@@ -43,3 +43,4 @@ yarn-debug.log*
 .vscode
 .env
 sendgrid.env
+user_mailer copy.rb

@@ -13,7 +13,7 @@ class UserMailer < ApplicationMailer
     require 'sendgrid-ruby'
     include SendGrid
 
-    from = Email.new(email: '	appstest108@gmail.com')
+    from = Email.new(email: 'appstest108@gmail.com')
     to = Email.new(email: user.email)
     subject = 'Sending with SendGrid is Fun'
     content = Content.new(type: 'text/plain', value: 'and easy to do anywhere, even with Ruby')

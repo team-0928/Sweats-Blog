@@ -21,7 +21,7 @@ https://sweets-blog.herokuapp.com/
 - PostgreSQL(データベース）
 - SendGrid(メール送信)
 
-動作環境をAWSに移行中です。現在はherokuにて動作中です。
+動作環境をAWSに移行中です。AWS上にてHTTPによる動作を確認することができました。HTTPS通信が可能になり次第、移行完了としたいと考えています。そのため現在はherokuにて動作中です。
 移行が完了次第、github上でお知らせいたします。
 
 ## 使い方

@@ -32,5 +32,7 @@ test:
 production:
   <<: *default
   database: sweets_blog_production
+  reconnect: false
   username: root
-  password: <%= ENV['Sweets_Blog_DATABASE_PASSWORD'] %>
+  password: 
+  #password: <%= ENV['Sweets_Blog_DATABASE_PASSWORD'] %>

@@ -9,8 +9,8 @@
     </div>
 
     <div class="btn-group" role="group" aria-label="Basic example">
-      <button type="button" class="active btn btn-primary btn-opt"><%= link_to "投稿(#{@user.posts.count})", @user %></button>
-      <button type="button" class="btn btn-success btn-opt"><%= link_to "いいね!(#{@user.liked_posts.count})", "/users/#{@user.id}/likes" %></button>
+      <button type="button" class="active btn btn-lg btn-primary btn-opt"><%= link_to "投稿(#{@user.posts.count})", @user %></button>
+      <button type="button" class="btn btn-lg btn-success btn-opt"><%= link_to "いいね!(#{@user.liked_posts.count})", "/users/#{@user.id}/likes" %></button>
     </div>
 
     <%= will_paginate @posts %>

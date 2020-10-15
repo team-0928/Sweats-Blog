@@ -8,10 +8,10 @@
       <% end %>
     </div>
 
-    <ul class="user-tabs">
-    <li><%= link_to "投稿(#{@user.posts.count})", @user %></li>
-      <li class="active"><%= link_to "いいね!", "/users/#{@user.id}/likes" %></li>
-    </ul>
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button id="post-btn" type="button" class="btn btn-secondary"><%= link_to "投稿(#{@user.posts.count})", @user %></button>
+      <button id="like-btn" type="button" class="active btn btn-secondary"><%= link_to "いいね!(#{@user.liked_posts.count})", "/users/#{@user.id}/likes" %></button>
+    </div>
 
     <%= will_paginate @posts %>
 

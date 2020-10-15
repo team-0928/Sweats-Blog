@@ -12,6 +12,7 @@ threads min_threads_count, max_threads_count
 #
 # port        ENV.fetch("PORT") { 3000 }
 bind "unix://#{Rails.root}/tmp/sockets/puma.sock"
+daemonize
 
 # Specifies the `environment` that Puma will run in.
 #

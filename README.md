@@ -14,9 +14,11 @@ Sweets Blogは利用者同士でスイーツの情報を共有することがで
 （ユーザー登録を行わない場合は、メール配信サービス「SendGrid」を利用したアカウント有効化の挙動を確認することができません）
 
 ## アプリのURL
+
 https://www.sweets-blog.awssample92.com/
 
 ## アプリの動作環境
+
 - Ruby on Rails(フレームワーク)
 - AWS(本番環境)
 - MySQL(データベース）
@@ -50,3 +52,14 @@ $ rails test
 ```
 $ rails server
 ```
+
+## 参考にした書籍やサービス
+
+### Webサービス
+
+- Railsチュートリアル Rails 6.0（第6版）
+
+### 書籍
+
+- Amazon Web Services 基礎からのネットワーク&サーバー構築 改訂3版 (日本語)
+- ゼロからわかる Amazon Web Services超入門 はじめてのクラウド かんたんIT基礎講座

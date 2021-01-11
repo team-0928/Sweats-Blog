@@ -42,5 +42,6 @@ yarn-debug.log*
 .yarn-integrity
 .vscode
 .env
+.nvmrc
 sendgrid.env
 user_mailer copy.rb

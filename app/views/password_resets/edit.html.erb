@@ -1,19 +1,19 @@
 <div class="jumbotron jumbotron_width">
   <div class="form_container">
-    <h1>Reset password</h1>
+    <h1>パスワードの再設定</h1>
     <%= form_with(model: @user, url: password_reset_path(params[:id]),
                   local: true) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
       <%= hidden_field_tag :email, @user.email %>
 
-      <%= f.label :password %>
+      <%= f.label :password, "新しいパスワード" %>
       <%= f.password_field :password, class: 'form-control' %>
 
-      <%= f.label :password_confirmation, "Confirmation" %>
+      <%= f.label :password_confirmation, "新しいパスワード（確認用）" %>
       <%= f.password_field :password_confirmation, class: 'form-control' %>
 
-      <%= f.submit "Update password", class: "btn btn-primary" %>
+      <%= f.submit "パスワードを変更する", class: "btn btn-primary" %>
     <% end %>
   </div>
 </div>

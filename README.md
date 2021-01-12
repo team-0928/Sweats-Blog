@@ -20,6 +20,10 @@ Sweets Blogは利用者同士でスイーツの情報を共有することがで
 
 https://www.sweets-blog.awssample92.com/
 
+## アプリのガイド(PDF)
+
+https://drive.google.com/file/d/1FT-EtLRdQlxW050uM_TU7O88usB453Nf/view?usp=sharing
+
 ## アプリの動作環境
 
 - Ruby on Rails(フレームワーク)

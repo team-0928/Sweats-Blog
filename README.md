@@ -23,6 +23,7 @@ https://www.sweets-blog.awssample92.com/
 ## アプリのガイド(PDF)
 
 https://drive.google.com/file/d/1FT-EtLRdQlxW050uM_TU7O88usB453Nf/view?usp=sharing
+[go](https://drive.google.com/file/d/1FT-EtLRdQlxW050uM_TU7O88usB453Nf/view?usp=sharing){:target="_blank" rel="noopener"}
 
 ## アプリの動作環境
 

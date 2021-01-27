@@ -5,6 +5,7 @@ class PostTest < ActiveSupport::TestCase
     @user = users(:michael)
     # このコードは慣習的に正しくない
     @post = @user.posts.build(name: "post name", content: "Lorem ipsum")
+    @post.image.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'avatar-default.png')), filename: 'default-image.png', content_type: 'image/png')
   end
 
   test "should be valid" do

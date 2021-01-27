@@ -53,7 +53,9 @@ class UserTest < ActiveSupport::TestCase
 
   test "associated posts should be destroyed" do
     @user.save
-    @user.posts.create!(name: "pancake", content: "Lorem ipsum")
+    @user.posts.build(name: "pancake", content: "Lorem ipsum")
+    @user.posts[0].image.attach(io: File.open(Rails.root.join('app', 'assets', 'images', 'avatar-default.png')), filename: 'default-image.png', content_type: 'image/png')
+    @user.save
     assert_difference 'Post.count', -1 do
       @user.destroy
     end

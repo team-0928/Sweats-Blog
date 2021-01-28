@@ -1,9 +1,13 @@
-<h1>投稿一覧</h1>
-
-<%= will_paginate @posts  %>
-
 <div class="row">
-  <%= render @posts, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+  <% if logged_in? %>
+    <%= render 'shared/user_info' %>
+  <% end %>
+  <div class="col-md-8">
+    <h1>投稿一覧</h1>
+    <%= will_paginate @posts  %>
+    <div class="row">
+      <%= render @posts, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+    </div>
+    <%= will_paginate %>
+  </div>
 </div>
-
-<%= will_paginate %>

@@ -1,7 +1,8 @@
 class StaticPagesController < ApplicationController
   def index
     if logged_in?
-      redirect_to posts_url
+      @post  = current_user.posts.build
+      @feed_items = current_user.feed.paginate(page: params[:page], per_page: 2)
     end
   end
 

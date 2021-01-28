@@ -2,6 +2,10 @@
 @import 'font-awesome-sprockets';
 @import 'font-awesome';
 
+/* mixins, variables, etc. */
+
+$gray-medium-light: #eaeaea;
+
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
@@ -15,10 +19,6 @@
   letter-spacing: -1px;
   font-weight: bold;
 }
-
-/* mixins, variables, etc. */
-
-$gray-medium-light: #eaeaea;
 
 /* universal */
 
@@ -128,37 +128,30 @@ aside {
       border: 0;
       padding-top: 0;
     }
-    // span {
-    //   display: block;
-    //   margin-bottom: 3px;
-    //   line-height: 1;
-    // }
-    // h1 {
-    //   font-size: 1.4em;
-    //   // text-align: left;
-    //   letter-spacing: -1px;
-    //   margin-bottom: 3px;
-    //   margin-top: 0px;
-    // }
+    span {
+      display: block;
+      margin-bottom: 3px;
+      line-height: 1;
+    }
+    h1 {
+      font-size: 1.4em;
+      text-align: left;
+      letter-spacing: -1px;
+      margin-bottom: 3px;
+      margin-top: 0px;
+    }
   }
 }
 
-.post_part {
-  text-align: center;
-  img {
-    margin-bottom: 20px;
-  }
-  a {
-    color: black;
-  }
+.avatar {
+  float: left;
+  margin-right: 10px;
 }
 
-.post_info {
-  width: 600px;
-  margin: 0 auto;
+.avatar_edit {
+  margin-top: 15px;
 }
 
-// font_awesome
 .stats {
   overflow: auto;
   margin-top: 0;
@@ -185,7 +178,7 @@ aside {
 .user_avatars {
   overflow: auto;
   margin-top: 10px;
-  .gravatar {
+  .avatar {
     margin: 1px 1px;
   }
   a {
@@ -197,6 +190,54 @@ aside {
   padding: 0;
 }
 
+/* posts */
+
+.posts {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 10px 0;
+    height: 230px;
+    // margin: 150px 0;
+    border-top: 1px solid #e8e8e8;
+  }
+  .user {
+    margin-top: 5em;
+    padding-top: 0;
+  }
+  .content {
+    display: block;
+    margin-left: 60px;
+    img {
+      display: block;
+      padding: 5px 0;
+    }
+  }
+  .timestamp {
+    color: gray;
+    display: block;
+    margin-left: 60px;
+  }
+  .post_img {
+    float: left;
+    margin-right: 10px;
+    margin-top: 5px;
+  }
+}
+
+aside {
+  textarea {
+    height: 100px;
+    margin-bottom: 5px;
+  }
+}
+
+span.image {
+  margin-top: 10px;
+  input {
+    border: 0;
+  }
+}
 
 /* forms */
 
@@ -263,7 +304,7 @@ input {
   li {
     overflow: auto;
     padding: 10px 0;
-    border-bottom: 1px solid gray;
+    border-bottom: 1px solid $gray-medium-light;
   }
 }
 

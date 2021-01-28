@@ -1,5 +1,12 @@
-<div class="jumbotron jumbotron_width outer">
-  <h1 class="display-4">SweetsBlogをはじめよう</h1>
-  <p class="lead">みんなでお気に入りのスイーツを投稿、共有しよう！</p>
-  <%= link_to "SweetsBlogをはじめよう！", signup_path, class: "btn btn-primary btn-lg", role: "button" %>
-</div>
+<% if logged_in? %>
+  <div class="col-md-8">
+    <h3>Micropost Feed</h3>
+    <%= render 'shared/feed' %>
+  </div>
+<% else %>
+  <div class="jumbotron jumbotron_width outer">
+    <h1 class="display-4">SweetsBlogをはじめよう</h1>
+    <p class="lead">みんなでお気に入りのスイーツを投稿、共有しよう！</p>
+    <%= link_to "SweetsBlogをはじめよう！", signup_path, class: "btn btn-primary btn-lg", role: "button" %>
+  </div>
+<% end %>

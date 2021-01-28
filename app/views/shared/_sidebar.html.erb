@@ -5,7 +5,7 @@
   <section class="stats">
     <%= render 'shared/stats' %>
   </section>
-  <section class="micropost_form">
-    <%= render 'shared/micropost_form' %>
+  <section class="follow_button">
+    <%= render 'shared/follow_form' if logged_in? %>
   </section>
 </aside>

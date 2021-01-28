@@ -3,7 +3,8 @@ class PostsController < ApplicationController
   before_action :correct_user, only: [:edit, :update, :destroy]
 
   def index
-    @posts = Post.paginate(page: params[:page], per_page: 9)
+    @feed_items = Post.paginate(page: params[:page], per_page: 2)
+    @user = current_user
   end
 
   def show

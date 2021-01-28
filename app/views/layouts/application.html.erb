@@ -11,7 +11,10 @@
     <% flash.each do |message_type, message| %> <%# ページ上部のメッセージを表示 %>
         <%= content_tag(:div, message, class: "alert alert-#{message_type}") %>
       <% end %>
-      <div class="min-height"> <%# ページ縦幅の最小値を指定 %>
+      <div class="min-height row"> <%# ページ縦幅の最小値を指定 %>
+        <% if logged_in? %>
+          <%= render 'shared/sidebar' %>
+        <% end %>
         <%= yield %>
       </div>
       <%= render 'layouts/footer' %>

@@ -1,23 +1,28 @@
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1>
-        <%= image_tag @user.avatar, size: '100x100', alt: "User Image" if @user.avatar.attached? %>
-        <%= @user.name %>
-      </h1>
-    </section>
-    <section class="stats">
-      <%= render 'shared/stats' %>
-    </section>
-  </aside>
-  <div class="col-md-8">
-    <%= render 'follow_form' if logged_in? %>
-    <% if @user.posts.any? %>
-      <h3>posts (<%= @user.posts.count %>)</h3>
-      <ol class="posts">
-        <%= render @posts %>
-      </ol>
-      <%= will_paginate @posts %>
-    <% end %>
+<div class="col-md-8">
+  <div class="tabs">
+    <input id="user_post" type="radio" name="tab_item" checked>
+    <label class="tab_item" for="user_post">投稿 (<%= @user.posts.count %>)</label>
+    <input id="user_like" type="radio" name="tab_item">
+    <label class="tab_item" for="user_like">いいね！ (<%= @user.liked_posts.count %>)</label>
+    <div class="tab_content" id="user_post_content">
+      <div class="tab_content_description">
+        <% if @user.posts.any? %>
+          <ol class="posts">
+            <%= render @posts %>
+          </ol>
+          <%= will_paginate @posts %>
+        <% end %>
+      </div>
+    </div>
+    <div class="tab_content" id="user_like_content">
+      <div class="tab_content_description">
+        <% if @user.liked_posts.any? %>
+          <ol class="posts">
+            <%= render @like_posts %>
+          </ol>
+          <%= will_paginate @like_posts %>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>

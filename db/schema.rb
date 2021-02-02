@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(version: 2021_01_27_020126) do
     t.integer "price"
     t.string "store"
     t.string "address"
-    t.string "image"
     t.text "content"
     t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
@@ -72,7 +71,6 @@ ActiveRecord::Schema.define(version: 2021_01_27_020126) do
     t.string "password_digest"
     t.string "remember_digest"
     t.boolean "admin", default: false
-    t.string "avatar"
     t.string "activation_digest"
     t.boolean "activated", default: false
     t.datetime "activated_at"

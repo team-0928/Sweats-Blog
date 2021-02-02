@@ -5,7 +5,6 @@ class CreatePosts < ActiveRecord::Migration[6.0]
       t.integer :price
       t.string :store
       t.string :address
-      t.string :image
       t.text :content
       t.references :user, foreign_key: true
 

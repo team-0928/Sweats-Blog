@@ -18,7 +18,7 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
-    @post.image.attach(params[:post][:image])
+    # @post.images.attach(params[:post][:image])
     if @post.save
       flash[:success] = "投稿しました！"
       redirect_to @post
@@ -34,9 +34,9 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
     if @post.update(post_params)
-      if params[:post][:image] != nil
-        @post.image.attach(params[:post][:image])
-      end
+      # if params[:post][:image] != nil
+      #   @post.image.attach(params[:post][:image])
+      # end
       flash[:seccess] = "投稿内容を変更しました！"
       redirect_to @post
     else
@@ -56,7 +56,7 @@ class PostsController < ApplicationController
 
     def post_params
       params.require(:post).permit(:name, :price,
-                    :store, :address, :image, :content)
+                    :store, :address, :content, images: [])
     end
 
     def correct_user

@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :correct_user, only: [:edit, :update, :destroy]
 
   def index
-    @feed_items = Post.paginate(page: params[:page], per_page: 2)
+    @feed_items = Post.paginate(page: params[:page], per_page: 5)
     @user = current_user
   end
 
@@ -50,6 +50,11 @@ class PostsController < ApplicationController
     redirect_to posts_url
     # redirect_to request.referrer || root_url
     # redirect_back(fallback_location: root_url)
+  end
+
+  def search
+    #Viewのformで取得したパラメータをモデルに渡す
+    @feed_items = Post.search(params[:search]).paginate(page: params[:page], per_page: 5)
   end
 
   private

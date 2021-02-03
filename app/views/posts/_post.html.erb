@@ -3,7 +3,9 @@
     <%= link_to(post, class: "post-link") do%>
       <span class="post_img"><%= image_tag(post.images[0], size: '200x200') if post.images.attached? %></span>
       <span class="user"><%= link_to post.user.name, post.user %></span>
-      <span class="content"><%= post.content %></span>
+      <span class="content"><%= post.content.truncate(70) %></span>
+      <div class="store"><%= image_tag "store-solid.svg", class:"icon", width:18, height:18 %><%= post.store %></div>
+      <div class="address"><i class="fas fa-map-marker-alt icon icon-center"></i><%= post.address %></div>
       <span class="timestamp">
         Posted <%= time_ago_in_words(post.created_at) %> ago.
         <% if current_user?(post.user) %>

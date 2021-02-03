@@ -115,6 +115,34 @@ footer {
   }
 }
 
+/* icon */
+
+.icon {
+  margin-right: 10px;
+}
+
+.icon-center {
+  margin-left: 2px;
+}
+
+.store, .address {
+  margin-top: 10px;
+}
+
+.search-container {
+  float: right;
+  .search-txt {
+    width: 80%;
+  }
+  .search-btn {
+    float: right;
+  }
+}
+
+.search-left {
+  display: inline-block;
+}
+
 /* sidebar */
 
 aside {

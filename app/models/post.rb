@@ -21,6 +21,10 @@ class Post < ApplicationRecord
     images.variant(resize_to_limit: [300, 300])
   end
 
+  def self.search(search)
+    return Post.all unless search
+    Post.where(['content LIKE ?', "%#{search}%"])
+  end
   # def user
   #   User.find(self.user_id)
   # end

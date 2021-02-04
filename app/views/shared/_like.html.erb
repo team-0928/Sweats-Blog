@@ -1,0 +1,18 @@
+<% if current_user %>
+  <% if current_user.already_liked?(post) %>
+    <%= link_to post_likes_path(post.id), method: :delete, remote: true do %>
+      <i class="fas fa-thumbs-up icon icon-center"><%= post.likes.count %></i>
+    <% end %>
+  <% else %>
+    <%= link_to post_likes_path(post.id), method: :post, remote: true do %>
+      <i class="far fa-thumbs-up icon icon-center"><%= post.likes.count %></i>
+    <% end %>
+  <% end %>
+<% else %>
+  <i class="fas fa-thumbs-up icon icon-center"><%= post.likes.count %></i>
+<% end %>
+
+<p>いいねしたユーザー</p>
+<% @post.liked_users.each do |user| %>
+  <li><%= user.name %></li>
+<% end %>

@@ -22,7 +22,8 @@ https://www.sweets-blog.awssample92.com/
 
 ## アプリのガイド(PDF)
 
-https://drive.google.com/file/d/1FT-EtLRdQlxW050uM_TU7O88usB453Nf/view?usp=sharing
+ブログサイトを改良しましたので、ガイドを再作成しています。
+もうしばらくお待ちください。
 
 ## アプリの動作環境
 

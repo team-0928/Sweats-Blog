@@ -1,6 +1,6 @@
 <div class="search-container">
   <%= form_tag(search_posts_path,:method => 'get') do %>
-    <%= text_field_tag :search, '', { class: 'search-txt' } %>
+    <%= text_field_tag :search, '',  { placeholder: "カテゴリや店名、地名などを入力してください", class: 'search-txt' } %>
     <%= button_tag(type: 'submit', class: 'search-btn', name: nil) do %>
       <i class="fas fa-search"></i>
     <% end %>
